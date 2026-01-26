@@ -1,3 +1,4 @@
+
 @import 'tailwindcss';
 
 @theme {
@@ -10,7 +11,125 @@
             color-mix(in oklab, var(--color-gray-950) 0%, transparent),
             color-mix(in oklab, var(--color-gray-950) 100%, transparent)
         ),
-        url('/images/noise.png');
+                              url('/images/desk.png');
+}
+
+.burger-menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 75px;
+    height: 75px;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+.burger-menu img {
+    width: 100%;
+    height: auto;
+    filter: brightness(150%) contrast(120%);
+    opacity: 1;
+}
+
+.book-spine.gold-embossed {
+    display: flex;
+    align-items: center;     /* vertical centering */
+    justify-content: center; /* horizontal centering */
+    padding: .2rem;
+    margin: .2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    border-left: 3px #f67280;
+    border: none;
+    cursor: pointer;
+
+    /* Text shimmer */
+    background-image: linear-gradient(to right, #d4af37, #ffd700, #b8860b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-position: center;
+
+    /* Shadow and glow */ 
+    text-shadow:
+	1px 1px 0 #000,
+	2px 2px 3px rgba(0, 0, 0, 1),
+	0 0 2px #ffd700; /* luminous edge */
+
+    box-shadow: 0 0 4px rgba(255, 215, 0, 0.2); 
+
+    /* Border and edge 
+    border-left: 4px solid #f67280;
+    border: 1px solid #444;
+    background-color: transparent; /* remove fallback if text-only shimmer */
+
+    /* Background image under text */
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.book-spine.gold-embossed::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/book.png'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; 
+    z-index: 0;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 85px; /* below the burger */
+    left: 35px;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: .5rem 1.5rem;
+    border-radius: 8px;
+    z-index: 9999;
+    color: white;
+    max-width: 90vw; /* prevents overflow on small screens */
+    border-left: 4px solid #f67280;
+    border: 1px solid #444;
+}
+
+.spine-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* controls spacing between spines */
+    align-items: center; /* prevents center stacking */
+}
+
+.spine-container a {
+  text-decoration: none;
+  color: gold;
+  font-weight: bold;
+}
+
+
+.shadow-container::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 40px; /* Adjust height as needed */
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+    pointer-events: none;
+    z-index: 30; /* Ensure it's above bg-noise and PNG */
+}
+
+
+.bg-noise {
+    
+    /* background-image: var(--background-image-noise); */
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
+    background-attachment: scroll; /* or fixed for parallax */
 }
 
 @layer base {
@@ -35,6 +154,73 @@
         font-size: 0.9em;
     }
 }
+
+.intro {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.corner {
+    mix-blend-mode: normal;
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* DESKTOP ANCHORS */
+.corner.top-right {
+    top: 0;
+    right: 0;
+}
+
+.corner.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.corner.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+
+/* MOBILE FIXES */ 
+@media (max-width: 768px) {
+    .corner {
+    width: 90px;
+    height: 90px;
+    opacity: 1;
+  }
+
+  .corner.top-left {
+      top: 10px; left: 10px; }
+
+  .corner.top-right {
+      top: 10px;
+      right: 10px;
+  }
+
+  .corner.bottom-left {
+      bottom: 10px;
+      left: 10px;
+      width: 300px;
+      height: 300px;
+      filter: brightness(110%) contrast(100%);
+  }
+
+
+  .corner.bottom-right {
+      bottom: 10px;
+      right: 10px;
+  }
+} 
 
 @layer components {
     .markdown {

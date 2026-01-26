@@ -1,0 +1,9 @@
+[build]
+  publish = "dist"
+[dev]
+  command = "npm run dev"
+  framework = "astro"
+[functions]
+  directory = "netlify/functions"
+[functions."fetch-from-notion"]
+  schedule = "*/15 * * * *"

@@ -1,30 +1,55 @@
 ---
 import Logo from '../components/Logo.astro';
-
-const navItems = [
-    { linkText: 'Home', href: '/' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
-    { linkText: 'Blobs', href: '/blobs' }
-];
+import { Image } from 'astro:assets';
+import burgerIcon from '../assets/images/300res_Tinscarecrow.png';
 ---
 
-<nav class="flex flex-wrap items-center gap-4 pt-6 pb-16 sm:pt-12 sm:pb-24">
-    <a href="/">
-        <Logo />
-    </a>
-    {
-        !!navItems?.length && (
-            <ul class="flex flex-wrap gap-x-4 gap-y-1">
-                {navItems.map((item) => (
-                    <li>
-                        <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2">
-                            {item.linkText}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        )
-    }
-</nav>
+
+<header>
+    <div class="burger-menu" id="burger">
+        <Image src={burgerIcon} alt="Menu icon" />
+    </div>
+    <nav id="mobileMenu" class="mobile-nav hidden">
+        <div class="spine-container">
+            <a href="/" class="book-spine gold-embossed">Home</a>
+            <a href="/archive" class="book-spine gold-embossed">Archive</a>
+	    <a href="/artifacts" class="book-spine gold-embossed">Artifacts</a>
+            <a href="/codex" class="book-spine gold-embossed">Codex</a>
+            <a href="/recipes" class="book-spine gold-embossed">Recipes</a>
+        </div>
+    </nav>
+
+
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+	 const burger = document.getElementById('burger');
+	 const menu = document.getElementById('mobileMenu');
+
+	 if (burger && menu) {
+	     // Toggle on click (mobile + desktop)
+	     burger.addEventListener('click', () => {
+		 menu.classList.toggle('hidden');
+	     });
+
+	     // Hover reveal (desktop only)
+	     burger.addEventListener('mouseover', () => {
+		 menu.classList.remove('hidden');
+	     });
+
+	     burger.addEventListener('mouseout', () => {
+		 setTimeout(() => {
+		     if (!menu.matches(':hover')) {
+			 menu.classList.add('hidden');
+		     }
+		 }, 300);
+	     });
+
+	     // Hide when leaving the menu (desktop)
+	     menu.addEventListener('mouseleave', () => {
+		 menu.classList.add('hidden');
+	     });
+	 }
+     });
+    </script>
+</header>
+

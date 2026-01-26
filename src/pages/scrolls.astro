@@ -1,0 +1,27 @@
+---
+const isDev = import.meta.env.DEV;
+const base = isDev
+  ? 'http://localhost:8888'
+  : 'https://tinscarecrow.netlify.app'; // replace with your actual Netlify site
+
+let scrolls = [];
+
+if (import.meta.env.DEV) {
+  const response = await Astro.fetch('http://localhost:8888/.netlify/functions/fetchScrolls');
+  scrolls = await response.json();
+}
+
+---
+
+<html>
+  <body>
+    <h1>Codex Scrolls</h1>
+    {scrolls.map(scroll => (
+      <article>
+        <h2>{scroll.title}</h2>
+        <p>{scroll.content}</p>
+        <small>Last updated: {new Date(scroll.lastEdited).toLocaleDateString()}</small>
+      </article>
+    ))}
+  </body>
+</html>

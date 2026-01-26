@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContextAlert from '../../components/ContextAlert.astro';
+import Markdown from '../../components/Markdown.astro';
+import Watermark from '../../components/Watermark.astro';
+import '../../styles/globals.css';
+---
+
+<Layout>
+  <ContextAlert />
+  <Markdown content={`
+
+# Hearty Low-Sodium Chicken & Bean Chili  
+*A 12-cup batch of protein-rich, low-sodium comfort food*
+
+### Ingredients
+- 4 lbs raw chicken (boneless, skinless thighs or breasts)
+- 1 box (32 oz) Swanson Unsalted Chicken Broth
+- 2 cups water
+- 2 bags (14-16 oz each) Kroger Frozen 3 Pepper & Onion Mix (Recipe Ready)
+- 1 can (15 oz) Kroger Unsalted Kidney Beans, drained and rinsed
+- 1 can (15 oz) Kroger Unsalted Black Beans, drained and rinsed
+- 8 oz fresh baby bella mushrooms, sliced
+- 1 cup masa harina (for thickening)
+- 1 tablespoon ground cumin
+- 2 tablespoons paprika  
+- 2 tablespoons chili powder
+- 2 tablespoons garlic powder
+- Salt to taste  
+
+### Instructions
+1. **Cook the chicken**: In an airfryer or oven, cook chicken for 25 minutes at 400 degrees.  
+2. **Cut the chicken**: Remove and cut with a knife or meat shears into chunks. Return to the pot.  
+3. **Add vegetables and beans**: Stir in frozen pepper & onion mix, mushrooms, kidney beans, and black beans.  
+4. **Season and simmer**: Add spices. Simmer for 15-20 minutes until vegetables are tender.  
+5. **Thicken with masa**: In a small bowl, whisk masa with warm broth to form a slurry. Stir into the soup and simmer another 10 minutes.  
+6. **Adjust texture**: Add more water if needed to reach desired consistency.
+
+### Yield
+- Makes approximately **12 cups** of soup
+
+### Nutrition Estimate (Per 1 Cup)
+- **Calories**: ~130-140  
+- **Protein**: ~13-15g  
+- **Carbs**: ~20-25g  
+- **Fat**: ~3-5g  
+- **Sodium**: ~40mg
+
+  `} />
+
+
+
+</Layout>

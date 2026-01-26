@@ -10,18 +10,28 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.2.3",
-    "@astrojs/react": "^4.2.1",
+    "@astrojs/mdx": "^4.3.9",
+    "@astrojs/netlify": "^6.5.11",
+    "@astrojs/react": "^4.4.0",
     "@fontsource-variable/inter": "^5.2.5",
     "@netlify/blobs": "^8.2.0",
+    "@netlify/edge-functions-bootstrap": "^2.17.1",
     "@netlify/functions": "^2.8.2",
+    "@notionhq/client": "^2.3.0",
     "@tailwindcss/vite": "^4.0.14",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
-    "astro": "^5.5.3",
+    "astro": "^5.14.1",
     "blobshape": "^1.0.0",
+    "cheerio": "^1.1.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "googleapis": "^164.1.0",
     "marked": "^13.0.0",
     "marked-shiki": "^1.2.0",
+    "node-fetch": "^3.3.2",
+    "open": "^10.2.0",
+    "puppeteer": "^24.29.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^4.0.14",
@@ -29,6 +39,7 @@
   },
   "devDependencies": {
     "@types/blobshape": "^1.0.3",
-    "@types/node": "^20.12.7"
+    "@types/node": "^20.12.7",
+    "netlify-cli": "^23.10.0"
   }
 }

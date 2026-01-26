@@ -9,26 +9,24 @@ interface Props {
     title: string;
 }
 
-const { title } = Astro.props;
+const { title = "TinScarecrow" } = Astro.props;
 ---
 
+ <header>
+   <Header />
+ </header>
+
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>{title}</title>
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
-    </head>
-    <body class="antialiased text-white bg-complementary">
-        <div class="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
-            <div class="flex flex-col w-full max-w-5xl mx-auto grow">
-                <Header />
-                <main class="grow"><slot /></main>
-                <Footer />
+ 
+ <!-- Fixed Noise + Desk Background -->
+    <div class="fixed inset-0 z-0 bg-noise"></div>    
+    
+    <!-- Scrollable Content Layer -->
+    <main  class="relative z-10 min-h-screen overflow-y-auto">
+        <section class="max-w-3xl mx-auto p-6">
+                        
+            <div class="relative z-20 shadow-container overflow-visible bg-[url('/images/page.png')] bg-repeat-y bg-top bg-[length:100%_auto] w-[816px] p-10 text-gray-800 w-[auto] mx-auto my-8">
+		<slot />
             </div>
-        </div>
-    </body>
-</html>
+        </section>
+    </main>
