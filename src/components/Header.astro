@@ -9,7 +9,7 @@ import burgerIcon from '../assets/images/300res_Tinscarecrow.png';
     <div class="burger-menu" id="burger">
         <Image src={burgerIcon} alt="Menu icon" />
     </div>
-    <nav id="mobileMenu" class="mobile-nav hidden">
+    <nav id="mobileMenu" class="mobile-nav">
         <div class="spine-container">
             <a href="/" class="book-spine gold-embossed">Home</a>
             <a href="/archive" class="book-spine gold-embossed">Archive</a>
@@ -25,30 +25,6 @@ import burgerIcon from '../assets/images/300res_Tinscarecrow.png';
 	 const burger = document.getElementById('burger');
 	 const menu = document.getElementById('mobileMenu');
 
-	 if (burger && menu) {
-	     // Toggle on click (mobile + desktop)
-	     burger.addEventListener('click', () => {
-		 menu.classList.toggle('hidden');
-	     });
-
-	     // Hover reveal (desktop only)
-	     burger.addEventListener('mouseover', () => {
-		 menu.classList.remove('hidden');
-	     });
-
-	     burger.addEventListener('mouseout', () => {
-		 setTimeout(() => {
-		     if (!menu.matches(':hover')) {
-			 menu.classList.add('hidden');
-		     }
-		 }, 300);
-	     });
-
-	     // Hide when leaving the menu (desktop)
-	     menu.addEventListener('mouseleave', () => {
-		 menu.classList.add('hidden');
-	     });
-	 }
      });
     </script>
 </header>

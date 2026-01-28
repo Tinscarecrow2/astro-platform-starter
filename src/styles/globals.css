@@ -18,8 +18,8 @@
     position: fixed;
     top: 10px;
     left: 10px;
-    width: 75px;
-    height: 75px;
+    width: 150px;
+    height: 150px;
     z-index: 10000;
     cursor: pointer;
 }
@@ -63,7 +63,7 @@
     /* Border and edge 
     border-left: 4px solid #f67280;
     border: 1px solid #444;
-    background-color: transparent; /* remove fallback if text-only shimmer */
+    background-color: transparent; remove fallback if text-only shimmer */
 
     /* Background image under text */
     background-color: transparent;
@@ -84,8 +84,8 @@
 
 .mobile-nav {
     position: fixed;
-    top: 85px; /* below the burger */
-    left: 35px;
+    top: 180px; /* below the burger */
+    left: 10px;
     background-color: rgba(0, 0, 0, 0.9);
     padding: .5rem 1.5rem;
     border-radius: 8px;
