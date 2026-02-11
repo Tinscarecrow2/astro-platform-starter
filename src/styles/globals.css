@@ -14,6 +14,10 @@
                               url('/images/desk.png');
 }
 
+.indent {
+  text-indent: 2em;
+}
+
 .burger-menu {
     position: fixed;
     top: 10px;
