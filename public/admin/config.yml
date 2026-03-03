@@ -1,14 +1,17 @@
+site_url: https://tinscarecrow.com
+display_url: https://tinscarecrow.com
+
 backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/uploads"
+media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "content/blog"
+    folder: "src/content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
