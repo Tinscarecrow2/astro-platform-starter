@@ -17,11 +17,13 @@ const { title = "TinScarecrow" } = Astro.props;
   <head>
     <meta charset="UTF-8">
     <title>{title}</title>
+     <!-- Netlify Identity -->
+     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
 
-
+<body>
  <header>
-   <Header />
+     <Header />
  </header>
 
 <!doctype html>
@@ -38,3 +40,16 @@ const { title = "TinScarecrow" } = Astro.props;
             </div>
         </section>
     </main>
+
+    <!-- Redirect to CMS after login -->
+    <script>
+
+     const netlifyIdentity = (window as any).netlifyIdentity;
+     
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    </script>
+</body>
