@@ -1,120 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
+import { getCollection, render } from 'astro:content';
 
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 ---
 
+<Layout title="Welcome to TinScareCrow.">
+  <script is:inline>
+    if (window.location.hash.includes("recovery_token=")) {
+      window.location.replace("/admin/" + window.location.hash);
+    }
+  </script>
 
-<Layout title="Welcome to TinScarecrow.">
-    <script is:inline>
-     if (window.location.hash.includes("recovery_token=")) {
-	 window.location.replace("/admin/" + window.location.hash);
-     }
-    </script>
-
-    <Markdown content={`3/25/2026
-## Black Walnut “Salmiakki” Candy – Trial, Error, and Sticky Lessons
-From the Synthesist-Food-Lab-Experiments
-		      
-<p>I had what felt like a great idea: black walnut Salmiakki -style candy with a licorice twist. The goal was simple—keep it sugar-free using allulose and bring in that classic flavor with anise.</p>
-<p>I started with a basic AI-assisted recipe and decided to prioritize flavor first. The base was straightforward:
-½ cup allulose and 1 tablespoon of water. No surprises there. </p>
-<p>The problems started when I added 1 teaspoon of anise extract and ½ teaspoon of molasses.
-I brought the mixture up to nearly a smoking point before adding the walnuts. At that stage, it didn’t behave like a proper syrup—it was thin—but once it cooled slightly, it looked like it might set.</p>
-<p>It didn’t.</p>
-<p>The coating stayed tacky, and the liquid never really evaporated the way I expected. That’s when the experiment turned into recovery mode.</p>
-<p>For the second round, I adjusted the ratios: <br>
-•	Increased allulose to 2/3 cup <br>
-•	Added about 2 tablespoons of water <br> 
-•	Mixed in roughly 1½ cups of peanuts along with the walnuts <br><br>
-This time, the syrup behaved much closer to what I was aiming for. After reheating, the nuts started to take on a more candy-like coating—but still not quite there. The texture remained slightly sticky.</p>
-<p>To push it further, I spread the mixture on parchment and baked it at 200°F for another 10 minutes. That helped dry things out a bit. After that, I moved everything to the fridge to cool.
-That final step made the candy usable, but not perfect.</p>
-<b>What I’d Change Next Time</b>
-		      
-<p>The biggest takeaway: the liquid additions were the problem.
-Next round, I’ll simplify: <br>
-•	Stick with 1 teaspoon of anise (likely oil or a more concentrated form) <br> 
-•	Skip the molasses <br>
-•	Avoid extra water beyond what’s absolutely needed <br><br>
-Allulose behaves differently than sugar—it doesn’t crystallize or dry the same way—so every extra bit of liquid works against you.
-This wasn’t a failure, just a sticky iteration. And honestly, the flavor direction is still worth chasing.</p>
-
-`}/>
-<br>
-<br>
-    
-<Markdown content={`3/2/2026
-## Bitter by Design
-
-<p class=indent">The last few weeks haven’t been quiet.  It was unusually busy. </p>
-
-<p class=indent">Leather patterns sketched mentally.
-Site structure reworked in thought.
-And one flavor composition that keeps resurfacing.</p>
-
-<p class=indent">Black walnuts at the core — tannic, sharp, unapologetic.</p>
-
-<p class=indent">A light artificial sweetener coating to create contrast rather than sugar haze.
-Anise for the licorice spine.
-Dutch-process cocoa for depth and shadow.
-A touch of molasses to round the edge.
-And sal ammoniac for that distinctly Finnish lift — not sweetness, but character.</p>
-
-<p class=indent">The goal isn’t mass appeal.</p>
-
-<p class=indent">It’s something closer to Tyrkisk Peber with a nut center — bitter layered over bitter until the flavors merge instead of compete.</p>
-
-<p class=indent">My creations rarely fail.</p>
-
-<p class=indent">They simply don’t meet common flavor expectations.</p>
-
-<p class=indent">They’re intuitive builds. Recipes of contrast. Controlled imbalance that resolves if you let it.</p>
-
-<p class=indent">Some flavors argue.
-Some collaborate.
-The interesting ones do both.</p><br>   --The Synthesist`} />
-
-<br><br>
-    
-<Markdown content={`2/11/2025
-		      
-## Will Bethesda Be Around in 10 Years?
-By The Synthesist
-		      
-
-<p class="indent">Bethesda makes a lot of good games. I’ve played Morrowind, Oblivion, Skyrim, Fallout: New Vegas, Fallout 4, and Starfield. These immersive worlds take years to build and test, and every new generation costs more than the last. Inflation rises, development teams grow, and ten-year cycles become the norm. That’s why some gamers now joke that they may never see Fallout 5 before their children do.</p>
-
-<p class="indent">In the 80s and 90s, PC games lived or died by word of mouth. If a title didn’t show up on the shelves at Egghead or GameStop, it might as well not have existed. We judged games the same way people judge books by the cover art and whatever luck put in front of us. There was no central hub, no digital storefront, no curated “coming soon” list. Shareware existed, but I never saw it in stores. Interplay’s Star Trek games and 3D Realms’ Duke Nukem weren’t widely distributed where I lived. Sierra, by contrast, was everywhere.</p>
-
-<p class="indent">I played the first three King’s Quest games, The Black Cauldron, most of Quest for Glory (Hero’s Quest), and most of Space Quest. But even then, many games were simply missing. Distribution gaps and communication failures meant entire series could vanish for years. When Hero’s Quest changed its name to Quest for Glory, it disappeared from shelves until QFG3. Space Quest II felt like a rumor. Gold Rush technically existed, but the code book made it nearly unplayable. Sierra’s last good game, for me, was Quest for Glory V: Dragon Fire.</p>
-
-<p class="indent">Why the history lesson? Because the pattern is familiar. Bethesda is drifting into the same long cycle, low-visibility rhythm that once eroded Sierra’s presence.</p>
-		      
-<p class="indent">Today, gamers are still playing decade-old Bethesda titles with community patches to keep them alive. Morrowind is nearly unplayable without screen-size fixes. New Vegas crashes if you breathe on it wrong. Fallout 4 from 2015 is still the “newest” of the classic Bethesda experiences, and Fallout 5 is years away. Starfield, the first new Bethesda universe in decades, was positioned as “Skyrim in Space,” but it hasn’t generated the cultural gravity of its predecessors.</p>
-
-<p class="indent">Some will ask, “What about Fallout 3?” Fallout 3 may have been a great game when it came out, but players did not get the memo. So, for many of us, it simply did not exist. That’s the risk of long development cycles: a game can be real, but invisible.</p>
-
-<p class="indent">Bethesda still communicates like it’s the 1990s. Word of mouth only goes so far, and attention spans are shorter than ever. Steam and digital storefronts changed everything players expect updates, roadmaps, and presence. Bethesda’s silence between releases feels more like Sierra’s gaps than a modern studio’s cadence. Anniversary Editions can only carry the weight for so long, and if you already own the Creation Club content, they add nothing new.</p>
-
-<p class="indent">Bethesda risks becoming “Bethesda who? A place in Maryland?”
-And the question remains: will they still be around in ten years if the next big release takes another decade?</p>`}/>
-    
-<br>
-<br>
-<Markdown content={`11/20/2025
-
-## Thoughts on upgrades:
-
-I used to build my desktop computer every 6ish years because it was a lot of effort and I lost track of time since the last one.  The last computer I built was a 3700X and an RTX 2080.  I replaced this one because the hardware was so effectively cooled that it heated me up instead and left me feeling sick.  I thought it was time for a more efficient system that did not leave me feeling ill.  January 2024 came and I bought an Alienware Aurora R15 for $2300 at a time when the video card for the system cost that much.  I also got a 7900x, 1 TB Western Digital Black SSD, 32 GB DDR5 RAM, and a 2 TB traditional drive.  I ran out of room fast because I kept my entire library of frequently used games there.  The end of the warranty could not come soon enough.  I replaced the 1 TB with a Samsung 990 4 TB SSD. The drive works great and lets me install all my games and other digital content.  The last change I made was converting Windows Home to Pro.  Since I got this through Amazon during the New Year, there were not many upgrade options.  Moving from Windows Home to Pro made all the little quirks I like to have from working as a technician come back.  Drive encryption and group policy tools were some of these.  
-Knowing that Alienware does not shortcut on specs made this purchase easier.  They did what I would have done when I did not have the time anymore.
-
-The other upgrade I like to do is Samsung Galaxy Ultra every two years.  The Galaxy Ultra monitors my heart, and I give that data to my doctors as a painless way to keep track.  Why not plus or other models?  First, I stress about battery life which is my reason to not get an EV either.  The second is whether I play games or do other tasks I wear out the phone.  When the phone is my daily driver, I need a good strong device.  I considered Apple devices as I had to use one as a technician.  The Apple ecosystem simply does not work for me at home with so many non-Apple devices like my HD DVD drive or my 4k Blue ray drive.  To keep my Windows/Android set up going, I have kept to Samsung for this task.
-		      
--The Synthesist
-`} />
-
-    
+  {
+    await Promise.all(
+      sortedPosts.map(async (post) => {
+        const { Content } = await render(post);
+        return (
+          <>
+            <article class="blog-entry">
+              <div class="post-date">
+                {new Date(post.data.date).toLocaleDateString()}
+              </div>
+              <h2>{post.data.title}</h2>
+              <Content />
+            </article>
+            <br />
+            <br />
+          </>
+        );
+      })
+    )
+  }
 </Layout>
 
 <script>
@@ -131,7 +51,3 @@ The other upgrade I like to do is Samsung Galaxy Ultra every two years.  The Gal
     document.body.appendChild(div);
   });
 </script>
-
-
-
-
