@@ -2,6 +2,8 @@
 title: Will Bethesda Be Around in 10 Years?
 date: 2026-02-11T10:00:00.000-07:00
 ---
+From the **Synthesist-Software-Archives**
+
 <p class="indent">Bethesda makes a lot of good games. I’ve played Morrowind, Oblivion, Skyrim, Fallout: New Vegas, Fallout 4, and Starfield. These immersive worlds take years to build and test, and every new generation costs more than the last. Inflation rises, development teams grow, and ten-year cycles become the norm. That’s why some gamers now joke that they may never see Fallout 5 before their children do.</p>
 
 <p class="indent">In the 80s and 90s, PC games lived or died by word of mouth. If a title didn’t show up on the shelves at Egghead or GameStop, it might as well not have existed. We judged games the same way people judge books by the cover art and whatever luck put in front of us. There was no central hub, no digital storefront, no curated “coming soon” list. Shareware existed, but I never saw it in stores. Interplay’s Star Trek games and 3D Realms’ Duke Nukem weren’t widely distributed where I lived. Sierra, by contrast, was everywhere.</p>
