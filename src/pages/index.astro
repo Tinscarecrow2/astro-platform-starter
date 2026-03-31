@@ -6,10 +6,15 @@ import Markdown from '../components/Markdown.astro';
 
 
 <Layout title="Welcome to TinScarecrow.">
+    <script is:inline>
+     if (window.location.hash.includes("recovery_token=")) {
+	 window.location.replace("/admin/" + window.location.hash);
+     }
+    </script>
 
     <Markdown content={`3/25/2026
 ## Black Walnut “Salmiakki” Candy – Trial, Error, and Sticky Lessons
-By The Synthesist
+From the Synthesist-Food-Lab-Experiments
 		      
 <p>I had what felt like a great idea: black walnut Salmiakki -style candy with a licorice twist. The goal was simple—keep it sugar-free using allulose and bring in that classic flavor with anise.</p>
 <p>I started with a basic AI-assisted recipe and decided to prioritize flavor first. The base was straightforward:
