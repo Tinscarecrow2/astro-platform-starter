@@ -5,13 +5,13 @@ date: 2026-03-02T10:00:00.000-07:00
 From the **Synthesist-Food-Labs**
 
 
-<p class=indent">The last few weeks haven’t been quiet.  It was unusually busy. </p>
+<p class=indent"><br>The last few weeks haven’t been quiet.  It was unusually busy. </p>
 
-<p class=indent">Leather patterns sketched mentally.
+<p class=indent"><br>Leather patterns sketched mentally.
 Site structure reworked in thought.
 And one flavor composition that keeps resurfacing.</p>
 
-<p class=indent">Black walnuts at the core — tannic, sharp, unapologetic.</p>
+<p class=indent">Black walnuts at the core — tannic, sharp, unapologetic.<br></p>
 
 <p class=indent">A light artificial sweetener coating to create contrast rather than sugar haze.
 Anise for the licorice spine.
