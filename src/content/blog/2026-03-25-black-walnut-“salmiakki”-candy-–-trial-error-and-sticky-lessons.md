@@ -27,4 +27,4 @@ Next round, I’ll simplify: <br><br>
 Allulose behaves differently than sugar—it doesn’t crystallize or dry the same way—so every extra bit of liquid works against you.
 This wasn’t a failure, just a sticky iteration. And honestly, the flavor direction is still worth chasing.</p>
 
---The Synthesist
+<br>--The Synthesist
