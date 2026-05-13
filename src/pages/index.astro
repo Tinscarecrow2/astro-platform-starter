@@ -8,7 +8,24 @@ const sortedPosts = posts.sort(
 );
 ---
 
-<Layout title="Welcome to TinScareCrow.">
+<Layout title="Welcome to TinScarecrow.">
+  <section class="title">
+      <h1 class="brand">TinScarecrow<span class="tm">™</span></h1>
+      <p class="subtitle">The Synthesist</p>
+  </section>
+  
+  <section class="intro">
+  <p>
+      <em>TinScarecrow</em> is where food experiments, unconventional leathercraft,
+      programming, electronics builds, and other thought experiments become reality.
+  </p>
+
+  <p>
+      <em>The Synthesist</em> is the title of the mind behind the work—testing,
+      building, documenting, and refining ideas into tangible results.
+  </p>
+  </section>
+
   <script is:inline>
     if (window.location.hash.includes("recovery_token=")) {
       window.location.replace("/admin/" + window.location.hash);
@@ -28,8 +45,7 @@ const sortedPosts = posts.sort(
               <h2>{post.data.title}</h2>
               <Content />
             </article>
-            <br />
-            <br />
+	    <br>
           </>
         );
       })
