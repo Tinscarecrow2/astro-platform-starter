@@ -1,6 +1,8 @@
 ---
 title: Bitter by Design
 date: 2026-03-02T10:00:00.000-07:00
+areas:
+  - recipes
 ---
 From the **Synthesist-Food-Labs**
 
