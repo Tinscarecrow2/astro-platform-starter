@@ -1,6 +1,8 @@
 ---
 title: Black Walnut “Salmiakki” Candy – Trial, Error, and Sticky Lessons
 date: 2026-03-25T10:00:00.000-06:00
+areas:
+  - recipes
 ---
 From the **Synthesist-Food-Labs**
 <p><br>I had what felt like a great idea: black walnut Salmiakki -style candy with a licorice twist. The goal was simple—keep it sugar-free using allulose and bring in that classic flavor with anise.</p><br>
