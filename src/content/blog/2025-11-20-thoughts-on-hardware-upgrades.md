@@ -1,6 +1,8 @@
 ---
 title: Thoughts on Hardware Upgrades
 date: 2025-11-20T10:00:00.000-07:00
+areas:
+  - blog
 ---
 
 From the **Synthesist-Hardware-Depot**
