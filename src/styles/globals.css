@@ -98,9 +98,11 @@
 
 .mobile-nav {
     position: fixed;
-    top: 180px; /* below the burger */
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.9);
+    top: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+	       
+    background-color: rgba(0, 0, 0, 1);
     padding: .5rem 1.5rem;
     border-radius: 8px;
     z-index: 9999;
@@ -112,9 +114,11 @@
 
 .spine-container {
     display: flex;
-    flex-direction: column;
-    gap: 0; /* controls spacing between spines */
+    flex-direction: row;
+    gap: .5rem; /* controls spacing between spines */
     align-items: center; /* prevents center stacking */
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .spine-container a {
